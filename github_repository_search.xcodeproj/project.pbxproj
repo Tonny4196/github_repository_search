@@ -13,6 +13,9 @@
 		4E9E272D2F36FE010000365E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9E272B2F36FE010000365E /* Main.storyboard */; };
 		4E9E272F2F36FE030000365E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E9E272E2F36FE030000365E /* Assets.xcassets */; };
 		4E9E27322F36FE030000365E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9E27302F36FE030000365E /* LaunchScreen.storyboard */; };
+		4E9E273B2F3700FE0000365E /* APIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E9E273A2F3700FE0000365E /* APIKit */; };
+		4E9E27472F3701E00000365E /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9E27452F3701E00000365E /* RepositoryListViewController.swift */; };
+		4E9E27482F3701E00000365E /* RepositoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9E27462F3701E00000365E /* RepositoryListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		4E9E272E2F36FE030000365E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E9E27312F36FE030000365E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E9E27332F36FE030000365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E9E27452F3701E00000365E /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
+		4E9E27462F3701E00000365E /* RepositoryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9E273B2F3700FE0000365E /* APIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 		4E9E27242F36FE010000365E /* github_repository_search */ = {
 			isa = PBXGroup;
 			children = (
+				4E9E27402F3701B90000365E /* ViewContollers */,
 				4E9E27252F36FE010000365E /* AppDelegate.swift */,
 				4E9E27272F36FE010000365E /* SceneDelegate.swift */,
 				4E9E27292F36FE010000365E /* ViewController.swift */,
@@ -65,6 +72,15 @@
 				4E9E27332F36FE030000365E /* Info.plist */,
 			);
 			path = github_repository_search;
+			sourceTree = "<group>";
+		};
+		4E9E27402F3701B90000365E /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				4E9E27452F3701E00000365E /* RepositoryListViewController.swift */,
+				4E9E27462F3701E00000365E /* RepositoryListViewController.xib */,
+			);
+			path = ViewContollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = github_repository_search;
+			packageProductDependencies = (
+				4E9E273A2F3700FE0000365E /* APIKit */,
+			);
 			productName = github_repository_search;
 			productReference = 4E9E27222F36FE010000365E /* github_repository_search.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 4E9E27192F36FE010000365E;
+			packageReferences = (
+				4E9E27392F3700FE0000365E /* XCRemoteSwiftPackageReference "APIKit" */,
+			);
 			productRefGroup = 4E9E27232F36FE010000365E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9E27482F3701E00000365E /* RepositoryListViewController.xib in Resources */,
 				4E9E27322F36FE030000365E /* LaunchScreen.storyboard in Resources */,
 				4E9E272F2F36FE030000365E /* Assets.xcassets in Resources */,
 				4E9E272D2F36FE010000365E /* Main.storyboard in Resources */,
@@ -138,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9E27472F3701E00000365E /* RepositoryListViewController.swift in Sources */,
 				4E9E272A2F36FE010000365E /* ViewController.swift in Sources */,
 				4E9E27262F36FE010000365E /* AppDelegate.swift in Sources */,
 				4E9E27282F36FE010000365E /* SceneDelegate.swift in Sources */,
@@ -363,6 +387,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E9E27392F3700FE0000365E /* XCRemoteSwiftPackageReference "APIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ishkawa/APIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E9E273A2F3700FE0000365E /* APIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E9E27392F3700FE0000365E /* XCRemoteSwiftPackageReference "APIKit" */;
+			productName = APIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E9E271A2F36FE010000365E /* Project object */;
 }
