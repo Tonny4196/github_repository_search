@@ -68,7 +68,7 @@ struct APIError: Error {
     
     // MARK: - Factory methods
         static func from(statusCode: Int, message: String) -> APIError {
-        let domain = "tonny.studymate-ios.api"
+        let domain = "tonny.github-repository-search.api"
         let statusCodeEnum = StatusCode(code: statusCode)
         
         // Convert raw message to Data for compatibility with errorMessage property

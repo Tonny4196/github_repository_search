@@ -17,4 +17,10 @@ struct SearchResponse: Decodable {
         case incompleteResults = "incomplete_results"
         case items
     }
+
+    init(totalCount: Int, incompleteResults: Bool, items: [Repository]) {
+        self.totalCount = totalCount
+        self.incompleteResults = incompleteResults
+        self.items = items
+    }
 }

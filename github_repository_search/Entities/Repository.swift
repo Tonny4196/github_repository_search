@@ -21,4 +21,12 @@ struct Repository: Decodable {
         case stargazersCount = "stargazers_count"
         case language
     }
+
+    init(name: String, url: URL, description: String?, stargazersCount: Int, language: String?) {
+        self.name = name
+        self.url = url
+        self.description = description
+        self.stargazersCount = stargazersCount
+        self.language = language
+    }
 }

@@ -153,11 +153,17 @@ class RepositoryListViewController: UIViewController {
 
         // Detect scroll to bottom for pagination
         tableView.rx.contentOffset
-            .withLatestFrom(viewModel.outputs.hasMore) { offset, hasMore in
-                return (offset, hasMore)
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .withLatestFrom(
+                Observable.combineLatest(
+                    viewModel.outputs.hasMore.asObservable(),
+                    viewModel.outputs.isLoading.asObservable()
+                )
+            ) { offset, state in
+                return (offset, hasMore: state.0, isLoading: state.1)
             }
-            .filter { [weak self] offset, hasMore in
-                guard let self = self, hasMore else { return false }
+            .filter { [weak self] offset, hasMore, isLoading in
+                guard let self = self, hasMore, !isLoading else { return false }
                 let contentHeight = self.tableView.contentSize.height
                 let scrollOffset = offset.y
                 let tableHeight = self.tableView.frame.size.height
